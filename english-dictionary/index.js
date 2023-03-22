@@ -31,6 +31,7 @@ async function fetchAPI(word) {
 		}
 	} catch (error) {
 		console.log(error);
+		infoTextEl.innerText = `An error happened, try again later`;
 	}
 }
 
