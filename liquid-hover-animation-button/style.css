@@ -47,10 +47,10 @@ body {
 /* Main cursor */
 .main_button_cont::before {
 	/* Using the position from JavaScript */
-	left: let(--cursorX);
-	top: let(--cursorY);
-	width: let(--size);
-	height: let(--size);
+	left: var(--cursorX);
+	top: var(--cursorY);
+	width: var(--size);
+	height: var(--size);
 	z-index: 2;
 	background-color: #f20089;
 }
@@ -58,9 +58,9 @@ body {
 /* Cursor follower */
 .main_button_cont::after {
 	/* Using from JavaScript */
-	rotate: let(--directionAngle);
-	left: let(--followerX);
-	top: let(--followerY);
+	rotate: var(--directionAngle);
+	left: var(--followerX);
+	top: var(--followerY);
 
 	/* It'll be an ellipse when cursor is moving and a circle when it's still */
 	width: let(--followerWidth);

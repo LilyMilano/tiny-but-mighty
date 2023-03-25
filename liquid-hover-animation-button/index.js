@@ -1,5 +1,5 @@
 const btn = document.querySelector('.main_button_cont');
-let last_five_positions = [
+var last_five_positions = [
 	[0, 0],
 	[0, 0],
 	[0, 0],
@@ -9,7 +9,6 @@ let last_five_positions = [
 
 // When the cursor is moving
 let rect, cursorX, cursorY, angle_from_horizontal_axis;
-
 btn.addEventListener('mousemove', (e) => {
 	// Make the cursor follower an ellipse
 	btn.style.setProperty('--followerWidth', '12px');
@@ -27,13 +26,11 @@ btn.addEventListener('mousemove', (e) => {
 		last_five_positions[4],
 		last_five_positions[0]
 	);
-
 	btn.style.setProperty(
-		'--direction_angle',
+		'--directionAngle',
 		angle_from_horizontal_axis_in_deg + 'deg'
 	);
 
-	// Sets the new values to CSS variables
 	// Sets the new values to CSS variables
 	btn.style.setProperty('--cursorX', cursorX + 'px');
 	btn.style.setProperty('--cursorY', cursorY + 'px');
