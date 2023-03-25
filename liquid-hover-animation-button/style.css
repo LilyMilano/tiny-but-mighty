@@ -63,7 +63,7 @@ body {
 	top: var(--followerY);
 
 	/* It'll be an ellipse when cursor is moving and a circle when it's still */
-	width: let(--followerWidth);
-	height: calc(let(--size) / 2);
+	width: var(--followerWidth);
+	height: calc(var(--size) / 2);
 	background-color: #e500a4;
 }
