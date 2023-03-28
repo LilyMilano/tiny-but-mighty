@@ -2,7 +2,7 @@ body {
 	padding: 0;
 	margin: 0;
 	height: 100vh;
-	background-color: rgba(230, 2, 116, 0.95);
+	background-color: rgba(230, 2, 116, 0.9);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -19,6 +19,7 @@ h2 {
 }
 .btn {
 	font-size: 5rem;
+    font-family: 'Reem Kufi', sans-serif;
 	border: none;
 	background: rgb(255, 255, 255, 0.2);
 	border-radius: 10px;
