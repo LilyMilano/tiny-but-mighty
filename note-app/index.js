@@ -77,6 +77,6 @@ function getNotes() {
 	return JSON.parse(localStorage.getItem('note-app') || '[]');
 }
 
-// :::::::::::::::::BUTTOM EVENT LISTENER:::::::::::::::::::::::::::::::
+// :::::::::::::::::BUTTON EVENT LISTENER:::::::::::::::::::::::::::::::
 
 btnEl.addEventListener('click', addNote);
