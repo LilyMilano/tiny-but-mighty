@@ -1,0 +1,33 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(220.55deg, #EAEAEA 0%, #8B8B8B 100%);
+}
+
+.container {
+    background-color: darkcyan;
+    color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin: 14px 0;
+}
+
+.input {
+    width: 100%;
+    font-size: 20px;
+    height: 30px;
+}
+
+.payment {
+    font-weight: 600;
+    font-size: 20px;
+}
