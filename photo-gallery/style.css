@@ -58,13 +58,13 @@ h2 {
     margin: 20px 0;
     font-size: 18px;
     border-radius: 5px;
-    background-color: black;
+    background-color: rgb(0, 42, 70);
     color: aliceblue;
 }
 
 .btn:hover {
     color: aliceblue;
-    background-color: #001C63;
+    background-color: rgb(9,75,125);
     cursor: pointer;
     transition: background-color 150ms ease-in-out;
 }
