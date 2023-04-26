@@ -15,7 +15,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    width: 80%;
+    max-width: 70%;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -27,20 +27,20 @@ h1{
     color:  #c32574;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     font-weight: 800;
-    font-size: 45px;
+    font-size: 35px;
     letter-spacing: 1px;
 }
 h2{
     display: flex;
     align-self:flex-start;
-    padding-left: 50px;
-    margin-bottom: 20px;
-    font-size: 30px;
-    font-weight: 800;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
 
 }
 h2 > span {
-    margin-left: 25px;
+    margin-left: 10px;
     color: #c32574;
 }
 button {
