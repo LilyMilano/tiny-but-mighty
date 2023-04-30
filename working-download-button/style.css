@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body a {
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-family: sans-serif;
+    color: #fff;
+    background: #cb3467;
+    width: 280px;
+    padding: 20px 0px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+a span {
+    position: relative;
+    width: 1.5rem;
+    visibility: hidden;
+}
+
+a span:after {
+    content: '\21D3';
+    font-size: 1.5rem;
+    position: absolute;
+    padding-left: 10px;
+    animation: down 1s linear infinite;
+}
+
+@keyframes down {
+    from{
+        top: -10px;
+        opacity: 0;
+    }
+    to{
+        top: 10px;
+        opacity: 1;
+    }
+}
