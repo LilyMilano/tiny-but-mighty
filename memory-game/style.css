@@ -1,0 +1,27 @@
+html {
+    max-height: 100vh;
+    background-color: azure;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#grid {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 40px;
+}
