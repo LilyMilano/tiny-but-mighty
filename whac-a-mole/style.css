@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+html {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(220.55deg, #FFE70B 0%, #27B643 100%);
+    min-height: 100vh;
+    font-family: 'Reem Kufi', sans-serif;
+    color: rgb(7, 78, 78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    width: 606px;
+    height: 606px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgb(4, 86, 86);
+}
+
+.mole {
+    background-image: url('mole.jpg');
+    background-size: cover;
+}
+
+h1{
+    color:aliceblue;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 2px rgb(4, 61, 61);
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 2rem;
+}
