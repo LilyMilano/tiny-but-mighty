@@ -1,8 +1,284 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
+/* GENERAL STYLES */
+
 * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
-img{
-    width: 400px;
+
+*::selection {
+    background: #db7092;
+    color: #fff;
+}
+
+*::-moz-selection {
+    background: #db7092;
+    color: #fff;
+}
+
+body {
+    background: linear-gradient(220.55deg, #B7DCFF 0%, #FFA4F6 100%);
+    color: #fff;
+    text-shadow: 0 1px 4px #022843;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 500px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+/* LOGO */
+
+.logo {
+    margin-bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo img {
+    width: 100%;
+    vertical-align: top;
+}
+
+
+h2 {
+    color: #db7092;
+    font-style: bold;
+    font-size: 25px;
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    text-shadow: 1px 1px 1px #022843;
+}
+
+/* ROWS AND COLUMS */
+
+.app .row {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.app .col {
+    width: 50%;
+}
+
+/* GENERAL STYLES OF INPUTS AND BUTTONS */
+
+.app label {
+    line-height: 40px;
+}
+
+.app input {
+    width: 100%;
+    text-align: center;
+    border: none;
+    color: #022843;
+}
+
+.app .btn {
+    width: 100%;
+    background: rgb(160, 91, 224);
+    color: #fff;
+    display: inline-block;
+    height: 40px;
+    vertical-align: top;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.app .btn:hover {
+    background: rebeccapurple;
+}
+
+.app .btn.false {
+    background: #9b89f5;
+}
+
+/* char-number row STYLE */
+.app .char-number .buttons div {
+    width: 100%;
+}
+
+.app .char-number .buttons div:nth-child(1) button {
+    border-radius: 4px 0 0 4px;
+}
+
+.app .char-number input {
+    height: 40px;
+    width: 100%;
+    cursor: default;
+    background: plum;
+    color: #fff;
+}
+
+.app .char-number .buttons div:nth-child(3) button {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.app .char-number .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* generate row STYLE */
+
+.app .row.generate {
+    margin-bottom: 10px;
+}
+
+.app .row.generate .col:nth-child(1) {
+    width: 30%;
+}
+
+.app .row.generate .col:nth-child(2) {
+    width: 65%;
+}
+
+.app .row.generate .btn.btn-generate {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding: 0px;
+    line-height: 40px;
+    position: relative;
+}
+
+.app .row.generate .btn.btn-generate i {
+    margin-left: 10px;
+    position: relative;
+    top: -1px;
+    font-size: 14px;
+}
+
+.app .row.generate .btn.btn-generate::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: rgb(160, 91, 224);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 13px;
+    right: -7px;
+    transition: all 0.3s ease;
+}
+
+.app .row.generate .col:nth-child(1):hover .btn.btn-generate::after {
+    background: rebeccapurple;
+}
+
+.app .row.generate .input-password {
+    width: 100%;
+    background: rgba(11, 189, 155, 0.3);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.app .row.generate .input-password:hover {
+    background: rgba(11, 189, 155, 0.7);
+}
+
+.app .row.generate .input-password::selection {
+    background: rgba(11, 189, 155, 0.7);
+}
+
+.app .row.generate .input-password::-moz-selection {
+    background: rgba(11, 189, 155, 0.7);
+}
+
+/* row alert STYLES */
+
+.app .row.alert {
+    justify-content: flex-end;
+}
+
+.app .row.alert .col {
+    width: 65%;
+}
+
+.app .row.alert .copied-alert {
+    text-align: center;
+    color: rgba(255, 255, 255, 0);
+    text-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.app .row.alert .copied-alert.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+.app .row.alert .copied-alert p,
+.app .row.alert .copied-alert i {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 500px) {
+    .logo img {
+        width: 70%;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .app .row {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .app .row .col {
+        width: 100%;
+    }
+
+    .app .row.generate {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        padding-top: 40px;
+    }
+
+    .app .row.generate .col:nth-child(1),
+    .app .row.generate .col:nth-child(2) {
+        width: 100%;
+    }
+
+    .app .row.generate .btn.btn-generate::after {
+        top: auto;
+        left: 50%;
+        right: 50%;
+        bottom: -7px;
+    }
+
+    .app .row.generate .input-password {
+        margin-top: 15px;
+    }
 }
