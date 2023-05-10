@@ -104,6 +104,7 @@ h2 {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    outline: none;
 }
 
 .app .btn:hover {
