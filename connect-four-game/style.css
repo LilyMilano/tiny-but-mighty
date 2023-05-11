@@ -1,22 +1,50 @@
+body {
+    background: linear-gradient(220.55deg, #8FFF85 0%, #39A0FF 100%);
+    min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    color: indigo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
 .grid-container {
-    border: 1px solid #222;
-    width: 140px;
-    height: 120px;
+    border: none;
+    width: 350px;
+    height: 300px;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 5px;
+    box-shadow: 0px 3px 30px 5px indigo;
 }
 
 .grid-container div {
-    height: 20px;
-    width: 20px;
+    width: 50px;
+    height: 50px;
 }
 
 .player-one {
     background-color: red;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .player-two {
     background-color: blue;
-    border-radius: 10px;
+    border-radius: 50%;
+}
+
+#player-heading {
+    display: block;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#result {
+    font-size: 20px;
+    letter-spacing: 2px;
 }
