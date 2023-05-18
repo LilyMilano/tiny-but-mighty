@@ -11,6 +11,9 @@ console.log(squaresEl);
 
 let currentIndex = 76;
 const squaresByRow = 9;
+let timerId;
+let outcomeTimerId;
+let currentTime = 20;
 
 const moveFrog = (event) => {
 	// console.log(event);
@@ -39,10 +42,17 @@ const moveFrog = (event) => {
 document.addEventListener('keyup', moveFrog);
 
 const autoMoveElements = () => {
+	currentTime--;
+	timeLeftDisplay.textContent = currentTime;
 	logsLeftEl.forEach((logLeftEl) => moveLogLeft(logLeftEl));
 	logsRightEl.forEach((logRightEl) => moveLogRight(logRightEl));
 	carsLeftEl.forEach((carLeftEl) => moveCarLeft(carLeftEl));
 	carsRightEl.forEach((carRightEl) => moveCarRight(carRightEl));
+};
+
+const checkOutcomes = () => {
+	lose();
+	win();
 };
 
 const moveLogLeft = (logLeftEl) => {
@@ -129,4 +139,41 @@ const moveCarRight = (carRightEl) => {
 	}
 };
 
-setInterval(autoMoveElements, 1000);
+const lose = () => {
+	if (
+		squaresEl[currentIndex].classList.contains('c1') ||
+		squaresEl[currentIndex].classList.contains('l4') ||
+		squaresEl[currentIndex].classList.contains('l5') ||
+		currentTime <= 0
+	) {
+		resultDisplay.textContent = 'You lose! 🥴🦎🤣👻';
+		clearInterval(timerId);
+		clearInterval(outcomeTimerId);
+		squaresEl[currentIndex].classList.remove('frog');
+		document.removeEventListener('keyup', moveFrog);
+	}
+};
+
+const win = () => {
+	if (squaresEl[currentIndex].classList.contains('ending-block')) {
+		resultDisplay.textContent = 'You win! 😁🥳🎉🏆';
+		clearInterval(timerId);
+		clearInterval(outcomeTimerId);
+		document.removeEventListener('keyup', moveFrog);
+	}
+};
+
+buttonEl.addEventListener('click', () => {
+	if (timerId) {
+		clearInterval(timerId); // Pause
+		clearInterval(outcomeTimerId);
+		outcomeTimerId = null;
+		timerId = null;
+		document.removeEventListener('keyup', moveFrog);
+	} else {
+		// Start
+		timerId = setInterval(autoMoveElements, 1000);
+		outcomeTimerId = setInterval(checkOutcomes, 50);
+		document.addEventListener('keyup', moveFrog);
+	}
+});
