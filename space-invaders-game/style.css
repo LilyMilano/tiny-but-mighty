@@ -1,7 +1,22 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(220.55deg, #5D85A6 0%, #0E2C5E 100%);
+    color: aliceblue;
+    min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace ;
+    font-weight: 900;
+}
+
 .grid {
     width: 300px;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid aliceblue;
     display: flex;
     flex-wrap: wrap;
 }
@@ -12,11 +27,19 @@
 }
 
 .invader {
-    background-color: purple;
+    background-color: rgb(163, 91, 230);
     border-radius: 10px;
 }
 
 .shooter {
-    background-color: red;
+    background-color: rgb(191, 8, 148);
+    ;
 }
 
+.laser {
+    background-color: orange;
+}
+
+.boom{
+    background-color: red;
+}
