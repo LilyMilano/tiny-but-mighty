@@ -1,0 +1,156 @@
+:root {
+    --neutralColor: #f7fff7;
+    --complimentaryColor: #f9957f;
+    --blackReplacementColor: #292f36;
+    --darkContrast: #0b3954;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--neutralColor);
+    background: linear-gradient(45deg, #f9957f, #f2f5d0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: min(45px, 13vw);
+    /* It'll be 50px high in wider screens and 13vw in smaller ones */
+    mix-blend-mode: multiply;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation {
+    /* To center it withing the body horizontally */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    column-gap: 30px;
+    /* Gap between the links in desktop version */
+    row-gap: 40px;
+    /* Gap between the links in hamburger menu */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--darkContrast);
+    font-family: "EB Garamond", serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#hamburgerMenu {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.6rem;
+}
+
+.searchInputBox,
+.searchButton {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.searchBar {
+    display: flex;
+    border-radius: 100px;
+}
+
+/* The hover effect for the searchbar */
+
+.searchBar:hover {
+    border: 2px solid var(--blackReplacementColor);
+}
+
+.searchBar:hover .searchInputBox {
+    width: min(150px, 17vw);
+}
+
+.searchInputBox {
+    width: 0;
+    /* In normal state (when not hovered), make the width 0 */
+    transition: width 1s;
+    padding: 5px;
+    border-radius: 100px;
+}
+
+.searchButton {
+    padding: 5px 7px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* If the viewport width is small, hide the navigation and searchbar */
+    .navigation {
+        display: none;
+    }
+
+    .searchBar {
+        display: none;
+        border: 2px solid var(--blackReplacementColor);
+        /* Because previously, we removed it for the hover effect */
+    }
+
+    /* And just show the hamburger menu */
+    #hamburgerMenu {
+        display: block;
+    }
+}
+
+/* When hamburger menu is clicked, open the menu */
+.mobileMenuWrapper.clicked {
+    display: flex;
+    position: fixed;
+
+    /* This will stretch the menu on the whole screen */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding-top: 10px;
+    background-color: var(--complimentaryColor);
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobileMenuWrapper.clicked .navigation {
+    /* Lay it vertically, instead of horizontally */
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.mobileMenuWrapper.clicked .searchBar {
+    display: flex;
+    width: 80%;
+    align-self: center;
+}
+
+.mobileMenuWrapper.clicked .searchInputBox {
+    width: 90%;
+}
+
+.mobileMenuWrapper {
+    transition: 1s;
+}
